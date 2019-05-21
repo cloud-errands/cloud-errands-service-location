@@ -29,6 +29,13 @@ public class CollegeController {
         return baseResult.ok();
     }
 
+    @GetMapping("{collegeId}")
+    public BaseResult getCollegeById(@PathVariable int collegeId) {
+        BaseResult baseResult = new BaseResult();
+        TableCollegeDO tableCollegeDO = tableCollegeService.getById(collegeId);
+        return baseResult.ok(tableCollegeDO);
+    }
+
     @GetMapping("list/{regionId}")
     public BaseResult listByRegionId(@PathVariable Double regionId) {
         BaseResult baseResult = new BaseResult();
