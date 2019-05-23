@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface TableRegionService {
     List<TableRegionDO> listAllByParentId(Double parentId);
+    TableRegionDO listAllByRegionCode(String regionCode);
 }

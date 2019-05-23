@@ -9,5 +9,6 @@ import java.util.List;
 @Repository
 public interface TableRegionRepository extends JpaRepository<TableRegionDO, Double> {
     List<TableRegionDO> findAllByParentId(Double parentId);
+    TableRegionDO findAllByRegionCode(String regionCode);
 
 }

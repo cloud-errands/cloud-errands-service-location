@@ -18,4 +18,9 @@ public class TableRegionServiceImpl implements TableRegionService {
     public List<TableRegionDO> listAllByParentId(Double parentId) {
         return tableRegionRepository.findAllByParentId(parentId);
     }
+
+    @Override
+    public TableRegionDO listAllByRegionCode(String regionCode) {
+        return tableRegionRepository.findAllByRegionCode(regionCode);
+    }
 }

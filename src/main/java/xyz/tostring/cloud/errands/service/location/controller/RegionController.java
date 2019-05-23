@@ -23,4 +23,11 @@ public class RegionController {
         List<TableRegionDO> tableRegionDOList = tableRegionService.listAllByParentId(parentId);
         return baseResult.ok(tableRegionDOList);
     }
+
+    @GetMapping("byCode/{regionCode}")
+    private BaseResult getByRegionCode(@PathVariable String regionCode) {
+        BaseResult baseResult = new BaseResult();
+        TableRegionDO tableRegionDO = tableRegionService.listAllByRegionCode(regionCode);
+        return baseResult.ok(tableRegionDO);
+    }
 }
