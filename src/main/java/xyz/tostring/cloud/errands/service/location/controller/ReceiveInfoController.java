@@ -62,7 +62,7 @@ public class ReceiveInfoController {
     public BaseResult getOne(@PathVariable Long id) {
         BaseResult baseResult = new BaseResult();
         TableReceiveInfoDO tableReceiveInfoDO = tableReceiveInfoService.getById(id);
-        return baseResult.ok(changeReceiveInfoDOToQueryVO(tableReceiveInfoDO));
+        return baseResult.ok(null == tableReceiveInfoDO ? null : changeReceiveInfoDOToQueryVO(tableReceiveInfoDO));
     }
 
     @PutMapping("as-default")
